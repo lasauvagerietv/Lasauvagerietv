@@ -2,91 +2,452 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Lasauvagerietv</title>
+
 <style>
-body{margin:0;background:#08090c;color:white;font-family:Arial,sans-serif}
-header{text-align:center;padding:45px 15px 25px;background:linear-gradient(#380b12,#08090c)}
-h1{font-size:42px;font-style:italic;margin:0;font-weight:900}
-h1 span{color:#ff2035}
-header p{color:#bbb}
-nav{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:15px}
-nav button{background:#171a20;color:white;border:1px solid #333;border-radius:12px;padding:10px 13px}
-main{padding:10px 15px;max-width:600px;margin:auto}
-section{background:#14171d;border:1px solid #292d35;border-radius:18px;padding:20px;margin:12px 0}
-h2{color:#ff2035}
-.card{background:#1b1e25;border-radius:14px;padding:15px;margin:10px 0}
-button{font-weight:bold;cursor:pointer}
-footer{text-align:center;color:#777;padding:30px}
+*{
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  background:#08090c;
+  color:white;
+  font-family:Arial,sans-serif;
+}
+
+header{
+  text-align:center;
+  padding:30px 15px;
+  background:linear-gradient(180deg,#15171d,#08090c);
+  border-bottom:2px solid #ff2035;
+}
+
+.logo{
+  font-size:36px;
+  font-weight:900;
+  font-style:italic;
+}
+
+.logo span{
+  color:#ff2035;
+}
+
+header p{
+  color:#aaa;
+  margin:8px 0 0;
+}
+
+nav{
+  display:flex;
+  gap:8px;
+  overflow-x:auto;
+  padding:12px;
+  background:#101217;
+  position:sticky;
+  top:0;
+  z-index:10;
+}
+
+nav button{
+  flex:0 0 auto;
+  border:0;
+  border-radius:10px;
+  padding:11px 14px;
+  background:#1b1e25;
+  color:white;
+  font-weight:bold;
+}
+
+nav button.active,
+nav button:hover{
+  background:#ff2035;
+}
+
+main{
+  max-width:650px;
+  margin:auto;
+  padding:15px;
+}
+
+.page{
+  display:none;
+}
+
+.page.active{
+  display:block;
+}
+
+.hero{
+  background:linear-gradient(135deg,#1a1d24,#101217);
+  border:1px solid #30343d;
+  border-radius:18px;
+  padding:25px;
+  margin-bottom:15px;
+  text-align:center;
+}
+
+.hero h1{
+  margin-top:0;
+  font-size:30px;
+}
+
+.card{
+  background:#14171d;
+  border:1px solid #2b2f38;
+  border-radius:15px;
+  padding:18px;
+  margin-bottom:14px;
+}
+
+.card h2{
+  color:#ff2035;
+  margin-top:0;
+}
+
+.stat{
+  display:flex;
+  justify-content:space-between;
+  padding:12px 0;
+  border-bottom:1px solid #292c33;
+}
+
+.stat:last-child{
+  border-bottom:0;
+}
+
+.value{
+  font-weight:bold;
+  color:#ff2035;
+}
+
+.weapon{
+  border-left:4px solid #ff2035;
+  background:#1a1d24;
+  padding:15px;
+  margin:12px 0;
+  border-radius:10px;
+}
+
+.weapon h3{
+  margin:0 0 6px;
+}
+
+.badge{
+  display:inline-block;
+  background:#292d36;
+  color:#ddd;
+  border-radius:20px;
+  padding:5px 10px;
+  font-size:12px;
+}
+
+.event{
+  border:1px solid #343842;
+  border-radius:12px;
+  padding:15px;
+  margin:12px 0;
+}
+
+.event strong{
+  color:#ff2035;
+}
+
+.social{
+  display:block;
+  text-decoration:none;
+  color:white;
+  background:#1b1e25;
+  padding:14px;
+  margin:10px 0;
+  border-radius:10px;
+  text-align:center;
+  font-weight:bold;
+}
+
+.social:hover{
+  background:#ff2035;
+}
+
+footer{
+  text-align:center;
+  color:#666;
+  padding:30px 15px;
+}
 </style>
 </head>
+
 <body>
 
 <header>
-<h1>Lasauvagerie<span>tv</span></h1>
-<h3>WARZONE</h3>
-<p>COMMUNAUTÉ • CLASSES • RÉGLAGES • ÉVÉNEMENTS</p>
+  <div class="logo">LASAUVAGERIET<span>V</span></div>
+  <p>WARZONE • COMMUNAUTÉ • GAMEPLAY</p>
 </header>
 
 <nav>
-<button onclick="afficher('accueil')">🏠 Accueil</button>
-<button onclick="afficher('classes')">🔫 Classes</button>
-<button onclick="afficher('reglages')">🎯 Réglages</button>
-<button onclick="afficher('classement')">🏆 Classement</button>
-<button onclick="afficher('communaute')">👥 Communauté</button>
+  <button onclick="showPage('accueil')" class="active">🏠 Accueil</button>
+  <button onclick="showPage('classes')">🔫 Classes</button>
+  <button onclick="showPage('reglages')">🎮 Réglages</button>
+  <button onclick="showPage('classement')">🏆 Classement</button>
+  <button onclick="showPage('communaute')">👥 Communauté</button>
+  <button onclick="showPage('evenements')">📅 Événements</button>
 </nav>
 
 <main>
 
-<section id="accueil">
-<h2>Bienvenue 👋</h2>
-<p>Bienvenue sur l'application officielle Lasauvagerietv !</p>
-<div class="card">🎮 Warzone</div>
-<div class="card">🔥 Classes et méta</div>
-<div class="card">🎯 Sensibilité et réglages</div>
-<div class="card">🏆 Classement de la communauté</div>
+<!-- ACCUEIL -->
+<section id="accueil" class="page active">
+
+  <div class="hero">
+    <h1>Bienvenue sur Lasauvagerietv 🔥</h1>
+    <p>
+      L'espace de la communauté Warzone de Lasauvagerietv.
+    </p>
+  </div>
+
+  <div class="card">
+    <h2>🎯 Mes réglages</h2>
+
+    <div class="stat">
+      <span>Sensibilité horizontale</span>
+      <span class="value">1,60</span>
+    </div>
+
+    <div class="stat">
+      <span>Sensibilité verticale</span>
+      <span class="value">1,60</span>
+    </div>
+
+    <div class="stat">
+      <span>Sensibilité ADS</span>
+      <span class="value">0,80</span>
+    </div>
+
+    <div class="stat">
+      <span>FOV</span>
+      <span class="value">120</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>🔥 Classes principales</h2>
+
+    <div class="weapon">
+      <h3>VMP</h3>
+      <span class="badge">Mitraillette</span>
+      <p>Classe principale de Lasauvagerietv.</p>
+    </div>
+
+    <div class="weapon">
+      <h3>Voyak KT-3</h3>
+      <span class="badge">Fusil d'assaut</span>
+      <p>Deuxième classe principale.</p>
+    </div>
+  </div>
+
 </section>
 
-<section id="classes" style="display:none">
-<h2>🔫 Mes classes</h2>
-<div class="card"><b>Classe principale</b><br>Ajoute ici ton arme et tes accessoires.</div>
-<div class="card"><b>Classe secondaire</b><br>Ajoute ici ta deuxième arme.</div>
+
+<!-- CLASSES -->
+<section id="classes" class="page">
+
+  <div class="card">
+    <h2>🔫 Mes classes Warzone</h2>
+    <p>Retrouve ici mes deux classes principales.</p>
+  </div>
+
+  <div class="card">
+    <h2>Classe 1 — VMP</h2>
+
+    <div class="weapon">
+      <h3>VMP</h3>
+      <span class="badge">MITRAILLETTE</span>
+      <p>
+        Arme principale pour les combats rapprochés.
+      </p>
+    </div>
+
+    <p>Accessoires : à personnaliser.</p>
+    <p>Style : mobilité et combats rapprochés.</p>
+  </div>
+
+  <div class="card">
+    <h2>Classe 2 — Voyak KT-3</h2>
+
+    <div class="weapon">
+      <h3>Voyak KT-3</h3>
+      <span class="badge">FUSIL D'ASSAUT</span>
+      <p>
+        Arme principale pour les engagements à moyenne et longue distance.
+      </p>
+    </div>
+
+    <p>Accessoires : à personnaliser.</p>
+    <p>Style : polyvalent.</p>
+  </div>
+
 </section>
 
-<section id="reglages" style="display:none">
-<h2>🎯 Sensibilité & réglages</h2>
-<div class="card">Sensibilité horizontale : <b>6</b></div>
-<div class="card">Sensibilité verticale : <b>6</b></div>
-<div class="card">FOV : <b>120</b></div>
-<div class="card">Zone morte gauche : <b>2</b></div>
-<div class="card">Zone morte droite : <b>3</b></div>
+
+<!-- REGLAGES -->
+<section id="reglages" class="page">
+
+  <div class="card">
+    <h2>🎮 Mes réglages Warzone</h2>
+
+    <div class="stat">
+      <span>Sensibilité horizontale</span>
+      <span class="value">1,60</span>
+    </div>
+
+    <div class="stat">
+      <span>Sensibilité verticale</span>
+      <span class="value">1,60</span>
+    </div>
+
+    <div class="stat">
+      <span>Sensibilité ADS</span>
+      <span class="value">0,80</span>
+    </div>
+
+    <div class="stat">
+      <span>FOV</span>
+      <span class="value">120</span>
+    </div>
+
+    <div class="stat">
+      <span>Zone morte gauche</span>
+      <span class="value">2</span>
+    </div>
+
+    <div class="stat">
+      <span>Zone morte droite</span>
+      <span class="value">3</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>🎯 Conseil</h2>
+    <p>
+      Ces réglages sont ceux utilisés actuellement par Lasauvagerietv.
+    </p>
+  </div>
+
 </section>
 
-<section id="classement" style="display:none">
-<h2>🏆 Classement</h2>
-<div class="card">🥇 Merguez_king — 1250 SR</div>
-<div class="card">🥈 Lasauvagerietv — 1180 SR</div>
-<div class="card">🥉 Kamil31 — 1050 SR</div>
+
+<!-- CLASSEMENT -->
+<section id="classement" class="page">
+
+  <div class="card">
+    <h2>🏆 Classement</h2>
+    <p>Classement de la communauté.</p>
+  </div>
+
+  <div class="card">
+    <div class="stat">
+      <span>🥇 Merguez_king</span>
+      <span class="value">1250 SR</span>
+    </div>
+
+    <div class="stat">
+      <span>🥈 Lasauvagerietv</span>
+      <span class="value">1180 SR</span>
+    </div>
+
+    <div class="stat">
+      <span>🥉 Kamil31</span>
+      <span class="value">1050 SR</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <p>ℹ️ Les données du classement pourront être modifiées plus tard.</p>
+  </div>
+
 </section>
 
-<section id="communaute" style="display:none">
-<h2>👥 Communauté</h2>
-<div class="card">🎮 Game</div>
-<div class="card">🤝 Entraide</div>
-<div class="card">🔥 Bonne ambiance</div>
-<p>Bienvenue dans la communauté Lasauvagerietv !</p>
+
+<!-- COMMUNAUTE -->
+<section id="communaute" class="page">
+
+  <div class="card">
+    <h2>👥 Communauté</h2>
+
+    <p>
+      Rejoins la communauté Lasauvagerietv et retrouve les joueurs,
+      les événements et les parties Warzone.
+    </p>
+
+    <a class="social" href="#" onclick="return false;">
+      💬 Discord — bientôt disponible
+    </a>
+
+    <a class="social" href="#" onclick="return false;">
+      🎵 TikTok — Lasauvagerietv
+    </a>
+
+    <a class="social" href="#" onclick="return false;">
+      🎮 Twitch — Lasauvagerietv
+    </a>
+  </div>
+
+</section>
+
+
+<!-- EVENEMENTS -->
+<section id="evenements" class="page">
+
+  <div class="card">
+    <h2>📅 Événements</h2>
+    <p>Les prochains événements de la communauté.</p>
+  </div>
+
+  <div class="event">
+    <strong>🔥 Partie communautaire Warzone</strong>
+    <p>Partie privée avec la communauté.</p>
+    <span class="badge">Bientôt</span>
+  </div>
+
+  <div class="event">
+    <strong>🏆 Tournoi Lasauvagerietv</strong>
+    <p>Informations et date à venir.</p>
+    <span class="badge">À venir</span>
+  </div>
+
 </section>
 
 </main>
 
-<footer>© Lasauvagerietv</footer>
+<footer>
+  Lasauvagerietv © 2026<br>
+  Warzone Community
+</footer>
+
 
 <script>
-function afficher(id){
-document.querySelectorAll("main section").forEach(s=>s.style.display="none");
-document.getElementById(id).style.display="block";
-window.scrollTo(0,0);
+
+function showPage(page){
+
+  document.querySelectorAll('.page').forEach(function(section){
+    section.classList.remove('active');
+  });
+
+  document.getElementById(page).classList.add('active');
+
+  document.querySelectorAll('nav button').forEach(function(button){
+    button.classList.remove('active');
+  });
+
+  event.target.classList.add('active');
+
+  window.scrollTo({
+    top:0,
+    behavior:'smooth'
+  });
 }
+
 </script>
 
 </body>
