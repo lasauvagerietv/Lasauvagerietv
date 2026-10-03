@@ -3,9 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Lasauvagerietv</title>
 
 <style>
+
 *{
   box-sizing:border-box;
 }
@@ -21,7 +23,7 @@ header{
   text-align:center;
   padding:30px 15px;
   background:linear-gradient(180deg,#15171d,#08090c);
-  border-bottom:2px solid #ff2035;
+  border-bottom:2px solid #9cff00;
 }
 
 .logo{
@@ -31,7 +33,7 @@ header{
 }
 
 .logo span{
-  color:#ff2035;
+  color:#9cff00;
 }
 
 header p{
@@ -58,15 +60,17 @@ nav button{
   background:#1b1e25;
   color:white;
   font-weight:bold;
+  cursor:pointer;
 }
 
 nav button.active,
 nav button:hover{
-  background:#ff2035;
+  background:#9cff00;
+  color:#08090c;
 }
 
 main{
-  max-width:650px;
+  max-width:700px;
   margin:auto;
   padding:15px;
 }
@@ -83,7 +87,7 @@ main{
   background:linear-gradient(135deg,#1a1d24,#101217);
   border:1px solid #30343d;
   border-radius:18px;
-  padding:25px;
+  padding:30px 22px;
   margin-bottom:15px;
   text-align:center;
 }
@@ -93,23 +97,145 @@ main{
   font-size:30px;
 }
 
+.hero p{
+  color:#bbb;
+  line-height:1.6;
+}
+
 .card{
   background:#14171d;
   border:1px solid #2b2f38;
   border-radius:15px;
   padding:18px;
-  margin-bottom:14px;
+  margin-bottom:15px;
 }
 
 .card h2{
-  color:#ff2035;
+  color:#9cff00;
   margin-top:0;
+}
+
+.card h3{
+  margin-bottom:6px;
+}
+
+.weapon{
+  border-left:4px solid #9cff00;
+  background:#1a1d24;
+  padding:17px;
+  margin:12px 0;
+  border-radius:10px;
+}
+
+.weapon h3{
+  font-size:22px;
+  margin:0 0 8px;
+}
+
+.badge{
+  display:inline-block;
+  background:#292d36;
+  color:#ddd;
+  border-radius:20px;
+  padding:6px 10px;
+  font-size:12px;
+  margin-bottom:10px;
+}
+
+.meta-badge{
+  display:inline-block;
+  background:#9cff00;
+  color:#08090c;
+  border-radius:20px;
+  padding:6px 10px;
+  font-size:12px;
+  font-weight:bold;
+  margin-bottom:10px;
+}
+
+.code-box{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  background:#0e1115;
+  border:1px solid #657d24;
+  border-radius:12px;
+  padding:12px;
+  margin-top:12px;
+}
+
+.code{
+  font-family:monospace;
+  font-weight:bold;
+  color:#ddd;
+  font-size:15px;
+  word-break:break-all;
+}
+
+.copy-btn{
+  border:0;
+  border-radius:8px;
+  background:#9cff00;
+  color:#08090c;
+  font-weight:bold;
+  padding:9px 12px;
+  cursor:pointer;
+  flex-shrink:0;
+}
+
+.copy-btn:hover{
+  opacity:.85;
+}
+
+.category{
+  color:#9cff00;
+  font-weight:bold;
+  text-transform:uppercase;
+  letter-spacing:1px;
+}
+
+.attachments{
+  margin-top:15px;
+  padding-top:10px;
+  border-top:1px solid #292c33;
+}
+
+.attachments h4{
+  margin:5px 0 12px;
+  color:#ddd;
+  font-size:14px;
+  text-transform:uppercase;
+  letter-spacing:2px;
+}
+
+.attachment{
+  display:flex;
+  justify-content:space-between;
+  gap:10px;
+  padding:10px 0;
+  border-bottom:1px solid #292c33;
+}
+
+.attachment:last-child{
+  border-bottom:0;
+}
+
+.attachment span:first-child{
+  color:#eee;
+}
+
+.attachment span:last-child{
+  color:#999;
+  text-align:right;
+  font-size:13px;
 }
 
 .stat{
   display:flex;
   justify-content:space-between;
-  padding:12px 0;
+  gap:15px;
+  padding:13px 0;
   border-bottom:1px solid #292c33;
 }
 
@@ -119,39 +245,8 @@ main{
 
 .value{
   font-weight:bold;
-  color:#ff2035;
-}
-
-.weapon{
-  border-left:4px solid #ff2035;
-  background:#1a1d24;
-  padding:15px;
-  margin:12px 0;
-  border-radius:10px;
-}
-
-.weapon h3{
-  margin:0 0 6px;
-}
-
-.badge{
-  display:inline-block;
-  background:#292d36;
-  color:#ddd;
-  border-radius:20px;
-  padding:5px 10px;
-  font-size:12px;
-}
-
-.event{
-  border:1px solid #343842;
-  border-radius:12px;
-  padding:15px;
-  margin:12px 0;
-}
-
-.event strong{
-  color:#ff2035;
+  color:#9cff00;
+  text-align:right;
 }
 
 .social{
@@ -159,15 +254,23 @@ main{
   text-decoration:none;
   color:white;
   background:#1b1e25;
-  padding:14px;
+  padding:15px;
   margin:10px 0;
   border-radius:10px;
   text-align:center;
   font-weight:bold;
+  border:1px solid #30343d;
 }
 
 .social:hover{
-  background:#ff2035;
+  background:#9cff00;
+  color:#08090c;
+}
+
+.note{
+  color:#999;
+  font-size:14px;
+  line-height:1.5;
 }
 
 footer{
@@ -175,126 +278,552 @@ footer{
   color:#666;
   padding:30px 15px;
 }
+
 </style>
 </head>
 
 <body>
 
 <header>
-  <div class="logo">LASAUVAGERIET<span>V</span></div>
-  <p>WARZONE • COMMUNAUTÉ • GAMEPLAY</p>
+
+  <div class="logo">
+    LASAUVAGERIET<span>V</span>
+  </div>
+
+  <p>
+    WARZONE • GAMEPLAY • CLASSES • META
+  </p>
+
 </header>
 
+
 <nav>
-  <button onclick="showPage('accueil')" class="active">🏠 Accueil</button>
-  <button onclick="showPage('classes')">🔫 Classes</button>
-  <button onclick="showPage('reglages')">🎮 Réglages</button>
-  <button onclick="showPage('classement')">🏆 Classement</button>
-  <button onclick="showPage('communaute')">👥 Communauté</button>
-  <button onclick="showPage('evenements')">📅 Événements</button>
+
+  <button onclick="showPage('accueil',this)" class="active">
+    🏠 Accueil
+  </button>
+
+  <button onclick="showPage('classes',this)">
+    🔫 Mes classes
+  </button>
+
+  <button onclick="showPage('meta',this)">
+    🔥 Armes META
+  </button>
+
+  <button onclick="showPage('sensibilites',this)">
+    🎮 Sensibilités
+  </button>
+
+  <button onclick="showPage('communaute',this)">
+    👥 Communauté
+  </button>
+
 </nav>
+
 
 <main>
 
+
+<!-- ========================= -->
 <!-- ACCUEIL -->
+<!-- ========================= -->
+
 <section id="accueil" class="page active">
 
   <div class="hero">
-    <h1>Bienvenue sur Lasauvagerietv 🔥</h1>
+
+    <h1>
+      Bienvenue sur Lasauvagerietv 🔥
+    </h1>
+
     <p>
-      L'espace de la communauté Warzone de Lasauvagerietv.
+      Bienvenue sur mon espace Warzone.
+      Retrouvez ici mes classes, les armes META,
+      mes sensibilités et toute la communauté.
     </p>
+
   </div>
 
+
   <div class="card">
-    <h2>🎯 Mes réglages</h2>
 
-    <div class="stat">
-      <span>Sensibilité horizontale</span>
-      <span class="value">1,60</span>
-    </div>
+    <h2>
+      🎮 Lasauvagerietv
+    </h2>
 
-    <div class="stat">
-      <span>Sensibilité verticale</span>
-      <span class="value">1,60</span>
-    </div>
+    <p>
+      Retrouvez mes configurations Warzone,
+      mes armes préférées et les classes META
+      utilisées par la communauté.
+    </p>
 
-    <div class="stat">
-      <span>Sensibilité ADS</span>
-      <span class="value">0,80</span>
-    </div>
-
-    <div class="stat">
-      <span>FOV</span>
-      <span class="value">120</span>
-    </div>
   </div>
 
+
   <div class="card">
-    <h2>🔥 Classes principales</h2>
+
+    <h2>
+      🔥 À découvrir
+    </h2>
 
     <div class="weapon">
-      <h3>VMP</h3>
-      <span class="badge">Mitraillette</span>
-      <p>Classe principale de Lasauvagerietv.</p>
+
+      <h3>
+        🔫 Mes classes
+      </h3>
+
+      <p>
+        Mes deux classes personnelles :
+        VOYAK KT-3 et VMP.
+      </p>
+
     </div>
 
+
     <div class="weapon">
-      <h3>Voyak KT-3</h3>
-      <span class="badge">Fusil d'assaut</span>
-      <p>Deuxième classe principale.</p>
+
+      <h3>
+        🔥 Armes META
+      </h3>
+
+      <p>
+        Les classes META avec leurs codes
+        et leurs accessoires.
+      </p>
+
     </div>
+
+
+    <div class="weapon">
+
+      <h3>
+        🎮 Sensibilités
+      </h3>
+
+      <p>
+        Retrouvez mes réglages de manette
+        et de visée.
+      </p>
+
+    </div>
+
   </div>
 
 </section>
 
 
-<!-- CLASSES -->
+
+<!-- ========================= -->
+<!-- MES CLASSES -->
+<!-- ========================= -->
+
 <section id="classes" class="page">
 
   <div class="card">
-    <h2>🔫 Mes classes Warzone</h2>
-    <p>Retrouve ici mes deux classes principales.</p>
+
+    <h2>
+      🔫 Mes classes Warzone
+    </h2>
+
+    <p>
+      Mes deux classes personnelles.
+    </p>
+
   </div>
 
-  <div class="card">
-    <h2>Classe 1 — VMP</h2>
 
-    <div class="weapon">
-      <h3>VMP</h3>
-      <span class="badge">MITRAILLETTE</span>
-      <p>
-        Arme principale pour les combats rapprochés.
-      </p>
+  <!-- VOYAK PERSONNEL -->
+
+  <div class="card">
+
+    <h2>
+      VOYAK KT-3
+    </h2>
+
+    <span class="badge">
+      FUSIL D'ASSAUT
+    </span>
+
+    <div class="attachments">
+
+      <h4>
+        Accessoires
+      </h4>
+
+      <div class="attachment">
+        <span>Redwell 30-S X2</span>
+        <span>Lunette</span>
+      </div>
+
+      <div class="attachment">
+        <span>Silencieux Monolithique</span>
+        <span>Bouche</span>
+      </div>
+
+      <div class="attachment">
+        <span>Canon LTI Grav-4 17,6"</span>
+        <span>Canon</span>
+      </div>
+
+      <div class="attachment">
+        <span>Chargeur à tambour SK-GA</span>
+        <span>Chargeur</span>
+      </div>
+
+      <div class="attachment">
+        <span>Sabot de contrôle V-Last</span>
+        <span>Crosse</span>
+      </div>
+
     </div>
 
-    <p>Accessoires : à personnaliser.</p>
-    <p>Style : mobilité et combats rapprochés.</p>
   </div>
 
-  <div class="card">
-    <h2>Classe 2 — Voyak KT-3</h2>
 
-    <div class="weapon">
-      <h3>Voyak KT-3</h3>
-      <span class="badge">FUSIL D'ASSAUT</span>
-      <p>
-        Arme principale pour les engagements à moyenne et longue distance.
-      </p>
+  <!-- VMP PERSONNEL -->
+
+  <div class="card">
+
+    <h2>
+      VMP
+    </h2>
+
+    <span class="badge">
+      MITRAILLETTE
+    </span>
+
+    <div class="attachments">
+
+      <h4>
+        Accessoires
+      </h4>
+
+      <div class="attachment">
+        <span>Redwell 30-S X2</span>
+        <span>Lunette</span>
+      </div>
+
+      <div class="attachment">
+        <span>Frein Stentorian LTI</span>
+        <span>Bouche</span>
+      </div>
+
+      <div class="attachment">
+        <span>Canon Nocturnal-VI 14,6"</span>
+        <span>Canon</span>
+      </div>
+
+      <div class="attachment">
+        <span>Garde-main Sapper Guard</span>
+        <span>Accessoire</span>
+      </div>
+
+      <div class="attachment">
+        <span>Chargeur grande capacité Daïkoku</span>
+        <span>Chargeur</span>
+      </div>
+
+      <div class="attachment">
+        <span>Sabot Greaves Valour</span>
+        <span>Crosse</span>
+      </div>
+
     </div>
 
-    <p>Accessoires : à personnaliser.</p>
-    <p>Style : polyvalent.</p>
   </div>
 
 </section>
 
 
-<!-- REGLAGES -->
-<section id="reglages" class="page">
+
+<!-- ========================= -->
+<!-- ARMES META -->
+<!-- ========================= -->
+
+<section id="meta" class="page">
 
   <div class="card">
-    <h2>🎮 Mes réglages Warzone</h2>
+
+    <h2>
+      🔥 Armes META
+    </h2>
+
+    <p>
+      Classes META Warzone avec le code
+      à entrer dans le jeu et les accessoires.
+    </p>
+
+    <p class="note">
+      Les codes peuvent être copiés directement
+      avec le bouton prévu à cet effet.
+    </p>
+
+  </div>
+
+
+  <!-- VOYAK META -->
+
+  <div class="card">
+
+    <div class="weapon">
+
+      <span class="meta-badge">
+        FAVORI DES PROS
+      </span>
+
+      <h3>
+        VOYAK KT-3
+      </h3>
+
+      <div class="category">
+        Longue portée
+      </div>
+
+      <p>
+        Fusil d'assaut
+      </p>
+
+
+      <div class="code-box">
+
+        <span class="code">
+          A09-23Y1W-DYN6F-11
+        </span>
+
+        <button
+          class="copy-btn"
+          onclick="copyCode('A09-23Y1W-DYN6F-11',this)">
+          📋 Copier
+        </button>
+
+      </div>
+
+
+      <div class="attachments">
+
+        <h4>
+          Accessoires
+        </h4>
+
+        <div class="attachment">
+          <span>Redwell 30-S X2</span>
+          <span>Lunette</span>
+        </div>
+
+        <div class="attachment">
+          <span>Silencieux Monolithique</span>
+          <span>Bouche</span>
+        </div>
+
+        <div class="attachment">
+          <span>Canon LTI Grav-4 17,6"</span>
+          <span>Canon</span>
+        </div>
+
+        <div class="attachment">
+          <span>Chargeur double Slipjoint</span>
+          <span>Chargeur</span>
+        </div>
+
+        <div class="attachment">
+          <span>Sabot de contrôle V-Last</span>
+          <span>Crosse</span>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+  <!-- VMP META -->
+
+  <div class="card">
+
+    <div class="weapon">
+
+      <span class="meta-badge">
+        FAVORI DES PROS
+      </span>
+
+      <h3>
+        VMP
+      </h3>
+
+      <div class="category">
+        Courte portée
+      </div>
+
+      <p>
+        Mitraillette
+      </p>
+
+
+      <div class="code-box">
+
+        <span class="code">
+          S14-A11S9-911
+        </span>
+
+        <button
+          class="copy-btn"
+          onclick="copyCode('S14-A11S9-911',this)">
+          📋 Copier
+        </button>
+
+      </div>
+
+
+      <div class="attachments">
+
+        <h4>
+          Accessoires
+        </h4>
+
+        <div class="attachment">
+          <span>Frein Stentorian LTI</span>
+          <span>Bouche</span>
+        </div>
+
+        <div class="attachment">
+          <span>Canon léger Gambol 10,9"</span>
+          <span>Canon</span>
+        </div>
+
+        <div class="attachment">
+          <span>Chargeur étendu Erudite</span>
+          <span>Chargeur</span>
+        </div>
+
+        <div class="attachment">
+          <span>Poignée de commandement tactique MFS</span>
+          <span>Poignée arrière</span>
+        </div>
+
+        <div class="attachment">
+          <span>Sabot Greaves Valour</span>
+          <span>Crosse</span>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+  <!-- STRIDER -->
+
+  <div class="card">
+
+    <div class="weapon">
+
+      <span class="meta-badge">
+        META
+      </span>
+
+      <h3>
+        STRIDER 300
+      </h3>
+
+      <div class="category">
+        Fusil de précision
+      </div>
+
+      <p>
+        Fusil de précision
+      </p>
+
+
+      <div class="code-box">
+
+        <span class="code">
+          R07-2JD6P-5NM5G-6J11
+        </span>
+
+        <button
+          class="copy-btn"
+          onclick="copyCode('R07-2JD6P-5NM5G-6J11',this)">
+          📋 Copier
+        </button>
+
+      </div>
+
+
+      <div class="attachments">
+
+        <h4>
+          Accessoires
+        </h4>
+
+        <div class="attachment">
+          <span>Silencieux Monolithique</span>
+          <span>Bouche</span>
+        </div>
+
+        <div class="attachment">
+          <span>Canon rainuré Bowen 25"</span>
+          <span>Canon</span>
+        </div>
+
+        <div class="attachment">
+          <span>Chargeur rapide Carnation</span>
+          <span>Chargeur</span>
+        </div>
+
+        <div class="attachment">
+          <span>Poignée rapide Hatch</span>
+          <span>Poignée arrière</span>
+        </div>
+
+        <div class="attachment">
+          <span>Munitions haute pression .300 WM</span>
+          <span>Mods de tir</span>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <div class="card">
+
+    <h2>
+      ➕ Autres armes META
+    </h2>
+
+    <p>
+      MK35 ISR • DS20 MIRAGE • MPC-25 • REV-46
+    </p>
+
+    <p class="note">
+      Les autres classes pourront être ajoutées
+      progressivement.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- ========================= -->
+<!-- SENSIBILITES -->
+<!-- ========================= -->
+
+<section id="sensibilites" class="page">
+
+  <div class="card">
+
+    <h2>
+      🎮 Mes sensibilités
+    </h2>
 
     <div class="stat">
       <span>Sensibilité horizontale</span>
@@ -325,127 +854,155 @@ footer{
       <span>Zone morte droite</span>
       <span class="value">3</span>
     </div>
+
   </div>
 
+
   <div class="card">
-    <h2>🎯 Conseil</h2>
+
+    <h2>
+      🎯 Réglages
+    </h2>
+
     <p>
-      Ces réglages sont ceux utilisés actuellement par Lasauvagerietv.
+      Cette partie pourra être complétée
+      avec les autres réglages de manette
+      et de visée.
     </p>
+
   </div>
 
 </section>
 
 
-<!-- CLASSEMENT -->
-<section id="classement" class="page">
 
-  <div class="card">
-    <h2>🏆 Classement</h2>
-    <p>Classement de la communauté.</p>
-  </div>
-
-  <div class="card">
-    <div class="stat">
-      <span>🥇 Merguez_king</span>
-      <span class="value">1250 SR</span>
-    </div>
-
-    <div class="stat">
-      <span>🥈 Lasauvagerietv</span>
-      <span class="value">1180 SR</span>
-    </div>
-
-    <div class="stat">
-      <span>🥉 Kamil31</span>
-      <span class="value">1050 SR</span>
-    </div>
-  </div>
-
-  <div class="card">
-    <p>ℹ️ Les données du classement pourront être modifiées plus tard.</p>
-  </div>
-
-</section>
-
-
+<!-- ========================= -->
 <!-- COMMUNAUTE -->
+<!-- ========================= -->
+
 <section id="communaute" class="page">
 
   <div class="card">
-    <h2>👥 Communauté</h2>
+
+    <h2>
+      👥 Communauté Lasauvagerietv
+    </h2>
 
     <p>
-      Rejoins la communauté Lasauvagerietv et retrouve les joueurs,
-      les événements et les parties Warzone.
+      Retrouvez Lasauvagerietv sur les réseaux sociaux.
     </p>
 
-    <a class="social" href="#" onclick="return false;">
-      💬 Discord — bientôt disponible
+
+    <a
+      class="social"
+      href="https://www.tiktok.com/@lasauvagerietv"
+      target="_blank">
+      🎵 TikTok — @lasauvagerietv
     </a>
 
-    <a class="social" href="#" onclick="return false;">
-      🎵 TikTok — Lasauvagerietv
+
+    <a
+      class="social"
+      href="https://www.instagram.com/lasauvagerietv/"
+      target="_blank">
+      📸 Instagram — @lasauvagerietv
     </a>
 
-    <a class="social" href="#" onclick="return false;">
+
+    <a
+      class="social"
+      href="https://www.snapchat.com/add/lasauvagerietv"
+      target="_blank">
+      👻 Snapchat — lasauvagerietv
+    </a>
+
+
+    <a
+      class="social"
+      href="https://www.twitch.tv/lasauvagerietv"
+      target="_blank">
       🎮 Twitch — Lasauvagerietv
     </a>
+
   </div>
 
-</section>
-
-
-<!-- EVENEMENTS -->
-<section id="evenements" class="page">
 
   <div class="card">
-    <h2>📅 Événements</h2>
-    <p>Les prochains événements de la communauté.</p>
-  </div>
 
-  <div class="event">
-    <strong>🔥 Partie communautaire Warzone</strong>
-    <p>Partie privée avec la communauté.</p>
-    <span class="badge">Bientôt</span>
-  </div>
+    <h2>
+      💬 Communauté Warzone
+    </h2>
 
-  <div class="event">
-    <strong>🏆 Tournoi Lasauvagerietv</strong>
-    <p>Informations et date à venir.</p>
-    <span class="badge">À venir</span>
+    <p>
+      Retrouvez les joueurs de la communauté,
+      les parties privées et les prochains événements.
+    </p>
+
   </div>
 
 </section>
+
 
 </main>
 
+
 <footer>
-  Lasauvagerietv © 2026<br>
+
+  Lasauvagerietv © 2026
+  <br>
   Warzone Community
+
 </footer>
 
 
 <script>
 
-function showPage(page){
+function showPage(page,button){
 
   document.querySelectorAll('.page').forEach(function(section){
+
     section.classList.remove('active');
+
   });
+
 
   document.getElementById(page).classList.add('active');
 
-  document.querySelectorAll('nav button').forEach(function(button){
-    button.classList.remove('active');
+
+  document.querySelectorAll('nav button').forEach(function(btn){
+
+    btn.classList.remove('active');
+
   });
 
-  event.target.classList.add('active');
+
+  button.classList.add('active');
+
 
   window.scrollTo({
     top:0,
     behavior:'smooth'
   });
+
+}
+
+
+function copyCode(code,button){
+
+  navigator.clipboard.writeText(code).then(function(){
+
+    const oldText = button.innerHTML;
+
+    button.innerHTML = "✅ Copié !";
+
+    setTimeout(function(){
+
+      button.innerHTML = oldText;
+
+    },1500);
+
+  });
+
 }
 
 </script>
